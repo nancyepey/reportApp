@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block title %}Create Dataset{% endblock %}
+
+{% block mainLink %}
+
+<li class="nav-item active">
+    <a class="nav-link" href="">Multiple Camera</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-md-6" style="margin: 0 auto;">
+      <h3>Create Dataset</h3>
+      <br>
+      <!--  href=" { %   u r l ' v i d e o _ t o _ i m a g e '   % }"" -->
+      <!-- <a class="nav-link">Start</a> -->
+
+      
+      <div class="card" style="width: 18rem;">
+		  <div class="card-body">
+		  	<h3 class="card-title">Create Dataset</h3>
+		  	<p class="card-text">This will save your images (100)</p>
+		  	<a href="{% url 'video_to_image' %}" class="card-link">Start</a>
+		    <!-- <h5 class="card-title">Card title</h5> -->
+
+		    {% if number %}
+			  <h4>Created {{ number }} images</h4> 
+			{% else %}
+			  <p class="card-text">Capturing images.</p>
+			{% endif %}
+		</div>
+      
+    </div>
+</div>
+{% endblock %}
